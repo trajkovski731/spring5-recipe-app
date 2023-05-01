@@ -23,4 +23,14 @@ public class RecipeServiceImpl implements RecipeService {
         recipeRepository.findAll().forEach(recipes::add);
         return recipes;
     }
+
+    @Override
+    public Set<Recipe> doSomeThings() {
+        Set<Recipe> recipes = new HashSet<>();
+        System.out.println("Print this");
+        recipes.forEach(recipe -> recipe.setDescription("text"));
+        return null;
+    }
+
+
 }

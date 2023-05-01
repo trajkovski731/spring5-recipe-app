@@ -16,7 +16,9 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndex(Model model) {
+        recipeService.getRecipes().forEach(recipe -> recipe.setPrepTime(2));
         model.addAttribute("recipes", recipeService.getRecipes());
+
         return "index";
     }
 }
